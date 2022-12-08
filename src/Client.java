@@ -11,10 +11,10 @@ public class Client {
   public static void main(String[] args) {
     int PORT = 12345;
     try{
-      Socket cs = new Socket("localhost", PORT);
+      Socket socket = new Socket("localhost", PORT);
 
 //Get the I/O streams
-OutputStream os = cs.getOutputStream();
+OutputStream os = socket.getOutputStream();
 BufferedOutputStream bos = new BufferedOutputStream(os);
 DataOutputStream dos = new DataOutputStream(bos);
 
@@ -33,7 +33,7 @@ while ((line = inputSc.nextLine()) != null){
 // dos.writeUTF("Do you get it?");
 // dos.flush();
 // System.out.println("MESSAGE SENT TO SERVER");
-cs.close();
+socket.close();
 
     } catch (UnknownHostException e){
 System.out.println("Unable to reach the HOST");
